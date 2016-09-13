@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>js插件-模态框</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+	<div class="container">
+<!-- 
+data-toggle:触发类型
+data-target:触发节点
+ -->
+		<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Button</button>
+
+		<div class="modal" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal"><span>&times;</span><span class="sr-only">Close</span></button>
+						Modal title
+					</div>
+					<div class="modal-body">Hello</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" data-dismiss="modal">Button</button>
+						<button class="btn btn-primary">Button</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <button class="btn btn-primary" data-toggle="modal" data-target="#modal">Button</button> -->
+
+		<!-- <div class="modal" id="modal" role="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal"><span>&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">Modal Title</h4>
+					</div>
+					<div class="modal-body">
+						This is a modal content!
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" data-dismiss="modal">Close</button>
+						<button class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		// $('#myModal').modal({
+		// 	show : true,
+		// 	backdrop : false,
+		// 	keyboard : false,
+		// });
+		// $('#myModal').on('click', function () {
+		// 	$('#myModal').modal('toggle');
+		// });
+		// $('#myModal').on('show.bs.modal', function() {
+		// 	alert('before show');
+		// });
+		// $('#myModal').on('shown.bs.modal', function() {
+		// 	alert('after show');
+		// });
+		// $('#myModal').on('hide.bs.modal', function() {
+		// 	alert('before hide');
+		// });
+		$('#myModal').on('hidden.bs.modal', function() {
+			alert('after hide');
+		});
+	</script>
+</body>
+</html>
